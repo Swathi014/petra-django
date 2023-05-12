@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Petra Gallery</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon-16x16.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicons/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'assets/img/favicons/apple-touch-icon.png' %}">
+    <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/mstile-150x150.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="{% static 'vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendors/hamburgers/hamburgers.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendors/loaders.css/loaders.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/theme.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/user.min.css' %}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="fixed-top">
+        <div class="container px-0">
+            <nav class="navbar navbar-expand-lg navbar-freya navbar-light">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <div class="freya-logo"> <img src="{% static 'assets/img/logo/001.png' %}" alt=""> </div>
+                </a><button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="hamburger hamburger--emphatic"><span
+                            class="hamburger-box"><span class="hamburger-inner"></span></span></span></button>
+                <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
+                    <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
+                        <li class="nav-item"><a class="nav-link " href="{% url 'index' %}" role="button"
+                                aria-expanded="false">Home</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link " href="{% url 'about' %}" role="button"
+                                aria-expanded="false">About</a></li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator"
+                                href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'marble' %}">MARBLES</a></li>
+                                <li><a class="dropdown-item" href="granite.html">GRANITE</a></li>
+                                <li><a class="dropdown-item" href="tiles.html">TILES</a></li>
+                                <li><a class="dropdown-item" href="claddings.html">CLADDINGS</a></li>
+                                <li><a class="dropdown-item" href="accessories.html">ACCESSORIES</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item "><a class="nav-link" href="{% url 'project' %}" role="button"
+                                aria-expanded="false">Projects</a></li>
+                        <li class="nav-item "><a class="nav-link" href="{% url 'contact' %}" role="button"
+                                aria-expanded="false">Contact</a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
+                        <li><a class="nav-link px-2" href="#"><span class="fab fa-facebook-f"
+                                    data-fa-transform="shrink-2"></span></a></li>
+                        <li><a class="nav-link px-2" href="#"><span class="fab fa-twitter"
+                                    data-fa-transform="shrink-2"></span></a></li>
+                        <li><a class="nav-link px-2" href="#"><span class="fab fa-instagram"
+                                    data-fa-transform="shrink-2"></span></a></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+{% block content %}
+
+{% endblock content %}
+
+<section class="bg-300 py-4 fs-1 text-center back">
+    <div class="container"><a class="d-inline-block px-2 text-900 fs-1" href="#!"><span class="fab fa-facebook-f"
+                data-fa-transform="shrink-2"></span></a><a class="d-inline-block px-2 text-900 fs-1" href="#!"><span
+                class="fab fa-twitter" data-fa-transform="shrink-2"></span></a>
+        <a class="d-inline-block px-2 text-900 fs-1" href="#!"><span class="fab fa-instagram"
+                data-fa-transform="shrink-2"></span></a>
+    </div>
+    <!-- end of .container-->
+</section>
+
+<footer class="bg-primary text-center py-6 ">
+    <div class="container">
+        <p class="text-uppercase text-300 ls mb-3">Petra gallery,Kakkur, Kerala, 673613</p>
+        <p class="text-700 mb-0">Designed by <a class="text-600" href="https://thychacreatives.com/"
+                target="_blank">Thycha Creatives</a></p>
+    </div>
+</footer>
+<script src="{% static 'vendors/popper/popper.min.js' %}"></script>
+<script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendors/is/is.min.js' %}"></script>
+<script src="{% static 'vendors/bigpicture/BigPicture.js' %}">
+</script>
+<script src="{% static 'vendors/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'vendors/fontawesome/all.min.js' %}"></script>
+<script src="{% static 'vendors/rellax/rellax.min.js' %}"></script>
+<script src="{% static 'vendors/lodash/lodash.min.js' %}"></script>
+<script src="{% static 'vendors/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'vendors/gsap/gsap.js' %}"></script>
+<script src="{% static 'vendors/gsap/customEase.js' %}"></script>
+<script src="{% static 'assets/js/theme.js' %}"></script>
+
+</body>
+</html>
