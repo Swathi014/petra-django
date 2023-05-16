@@ -13,7 +13,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" data-zanim-timeline="{}">
                         <div class="bg-holder overlay overlay-freya"
-                            style="background-image:url(https://img.freepik.com/free-photo/top-view-boards-mdf-material_23-2149418577.jpg?w=1380&t=st=1679293706~exp=1679294306~hmac=f5210670c062c5703c04c61917d86edbf8f1c7c3adb97e4ac7430ae5b174fa13);"
+                            style="background-image:url({{ carousals.image.url }});"
                             data-parallax="data-parallax" data-rellax-speed="-3"></div>
                         <!--/.bg-holder-->
                         <div class="container-fluid">
@@ -25,20 +25,19 @@
                                             <div class="overflow-hidden">
                                                 <p class="mb-1 text-uppercase ls"
                                                     data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.1}'>
-                                                    AvePoint Richmond</p>
+                                                    {{ carousals.sub_title }}</p>
                                             </div>
                                             <div class="overflow-hidden">
                                                 <h2 class="text-white fw-medium mb-4 mb-lg-0"
                                                     data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0}'>
-                                                    Wide variety of tiles, in exclusive designs. </h2>
+                                                    {{ carousals.title }} </h2>
                                             </div>
                                         </div>
                                         <div class="col text-lg-end">
                                             <div class="overflow-hidden">
                                                 <div
                                                     data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.2}'>
-                                                    <a class="btn btn-sm btn-outline-white" href="projects.html">View
-                                                        Our gallery</a>
+                                                    <a class="btn btn-sm btn-outline-white" href="projects.html">{{ carousals.button_label }}</a>
                                                 </div>
                                             </div>
                                         </div>

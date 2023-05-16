@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from core.models import Carousal
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    carousals = Carousal.objects.first()
+    context = {
+        'carousals' : carousals
+    }
+    return render(request,'index.html',context)
 
 def about(request):
     return render(request,'about.html')
