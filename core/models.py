@@ -26,8 +26,26 @@ class Category(models.Model):
 class Product(models.Model):
     image = models.ImageField(upload_to='product')
     title = models.CharField(max_length=225)
+    description = models.CharField(max_length=225)
     price = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    status = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
+
+class Abouthome(models.Model):
+    title = models.CharField(max_length=225)
+    sub_title = models.CharField(max_length=150)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title    
+    
+class Logo_slider(models.Model):
+    image = models.ImageField(upload_to='logo_slider')
+
+    # def __str__(self):
+    #     return self.image
+
+   

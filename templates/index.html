@@ -108,16 +108,9 @@
                 <div class="container mt-6">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-10">
-                            <h5 class="mb-4 text-center ls" style="color: brown;"> About Us</h5>
-                            <h4 class="mb-4">We take pride in the quality and variety of our materials.</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloribus eos cumque
-                                quis
-                                quasi dolores ex, minima saepe adipisci tempore voluptates placeat doloremque provident
-                                aliquid optio dolor soluta est in! Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit.
-                                Ut, tenetur iure sed delectus velit consequatur similique. Nemo rerum odit ducimus,
-                                commodi
-                                ea et! Soluta animi, a nisi esse architecto ducimus.</p>
+                            <h5 class="mb-4 text-center ls" style="color: brown;">{{ abouthome.title }}</h5>
+                            <h4 class="mb-4">{{ abouthome.sub_title }}</h4>
+                            <p>{{ abouthome.description }}</p>
                         </div>
                     </div>
                     <div class="row mt-5">
@@ -153,8 +146,8 @@
 
         <!--Our Product End-->
         
-        <section class="back contact ">
-            <div class="row justify-content-center ">
+        <section class="back contact">
+            <div class="row justify-content-center">
                 <div class="col-md-10">
                     <h4 class=" text-center ls mb-5" style="color: brown;"> Latest Products</h4>
                 </div>
@@ -166,132 +159,19 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="cards-wrapper">
+                            {% for product in products %}
                             <div class="card">
                                 <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/premium-photo/marble-stone-texture-as-background_789279-4417.jpg?w=1380"
+                                    <img src="{{ product.image.url }}"
                                         alt="...">
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">White Granite</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="granite.html" class="btn btn-primary">Learn More</a>
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <a href="{% url 'category' product.category.id %}" class="btn btn-primary">Learn More</a>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/free-photo/light-grey-background-brick-blocks_1194-7538.jpg?w=1380&t=st=1679635538~exp=1679636138~hmac=64c704b1642f83cbf6c2949780ccb0a16a5424bdf3ce85a68fe671775b4ac5c3"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Grey claddings</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="claddings.html" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/premium-photo/light-soft-white-marble-texture_171337-25507.jpg"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">White marbles</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="marble.html" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="cards-wrapper">
-                            <div class="card">
-                                <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/premium-photo/light-soft-white-marble-texture_171337-25507.jpg"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">White marbles</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/free-photo/gold-marbled-pattern_53876-88811.jpg?t=st=1679635178~exp=1679635778~hmac=379d31921533c889010b33990e8ab472031bf6109911ee81978aff50621e8c19"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Mixed tiles</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/free-photo/black-marbled-surface_53876-90798.jpg?t=st=1679635178~exp=1679635778~hmac=45ffd01f56a32e2db423db8d149f7e9fc8982f8d52ff77a41dcf4f75fe165a66"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BLACK
-                                        GRANITE</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="cards-wrapper">
-                            <div class="card">
-                                <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/free-vector/realistic-liquid-marble-background-with-gold_23-2148897013.jpg?w=1380&t=st=1679635185~exp=1679635785~hmac=8378a53d36f44b2a89d2102ae907cb05fa738ca63137a221d80e2adba8cfe8b2"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/free-photo/stone-floor-texture_1194-9047.jpg?w=1380&t=st=1679635200~exp=1679635800~hmac=027130b9e2201c882195edbe453ff05eec8bffcf3151545a36781cc5b9d9a8eb"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image-wrapper  zoom-effect">
-                                    <img src="https://img.freepik.com/free-photo/close-up-black-marble-textured-background_53876-148094.jpg?w=1380&t=st=1679635218~exp=1679635818~hmac=ca90acc90175732224ff548482822e6460436159eee6e92f0e48621b9e1a4573"
-                                        alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -363,30 +243,12 @@
             <!-- client slider -->
             <div class="slider container">
                 <div class="slide-track">
+                    {% for logo_slider in logo_sliders %}
                     <div class="slide">
-                        <img src="{% static '/assets/img/clients/1.png' %}" height="100" width="250"
+                        <img src="{{ logo_slider.image.url }}" height="100" width="250"
                             alt="" />
                     </div>
-                    <div class="slide">
-                        <img src="{% static '/assets/img/clients/2.png' %}" height="100" width="250"
-                            alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="{% static '/assets/img/clients/3.png' %}" height="100" width="250"
-                            alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="{% static '/assets/img/clients/4.png' %}" height="100" width="250"
-                            alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="{% static '/assets/img/clients/5.png' %}" height="100" width="250"
-                            alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="{% static '/assets/img/clients/6.png' %}" height="100" width="250"
-                            alt="" />
-                    </div>                    
+                    {% endfor %}
                 </div>
             </div>
         </section>
