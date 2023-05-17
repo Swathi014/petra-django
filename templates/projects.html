@@ -26,43 +26,21 @@
 
             <div class="box">
                 <div class="col">
-                    <img
-                        src="https://img.freepik.com/free-photo/dark-room-with-wooden-floor_1048-2481.jpg?w=900&t=st=1679555171~exp=1679555771~hmac=318801e87e33d202024915019cae906e86e128431c582253cf8eb04f5aa24c43">
-
-                    <img
-                        src="https://img.freepik.com/free-photo/3d-rendering-modern-steel-elevator-lift-lobby-business-hotel-with-luxury-design_105762-2042.jpg?w=740&t=st=1679555339~exp=1679555939~hmac=5b06791162302bf9c3e8a4a7813faf74c90d47bf3c8647dae82fb1f9ef41cb90">
-
-                    <img
-                        src="https://img.freepik.com/free-photo/living-room-japandi-interior-design_53876-138124.jpg?w=1380&t=st=1679555214~exp=1679555814~hmac=ddf418d28353f25d1cb6be2ddd57d523517ec2696e77f85dc5de2247c4c12e25">
-                    <img
-                        src="https://img.freepik.com/free-photo/3d-rendering-modern-wood-stone-white-bathroom_105762-2127.jpg?w=740&t=st=1679555432~exp=1679556032~hmac=9e7c4095f73f46deb30d70e03659260e7abadc51933d7a8c4b065603d45a322d">
-                    <img
-                        src="https://img.freepik.com/free-photo/view-modern-office_1170-1970.jpg?w=740&t=st=1679555492~exp=1679556092~hmac=e9892fe3a63dcf7f7086d69e97eaf009a946741122bbe1022e437066bdb87819">
+                    {% for section in section1 %}
+                        <img src="{{ section.image.url }}">
+                    {% endfor %}
                 </div>
 
                 <div class="col">
-                    <img
-                        src="https://img.freepik.com/premium-photo/3d-rendering-luxury-modern-design-bathroom-toilet_105762-436.jpg?w=740">
-                    <img
-                        src="https://img.freepik.com/free-photo/front-view-brick-building-city_23-2148798640.jpg?w=740&t=st=1679555729~exp=1679556329~hmac=1b45490143a0cf52fe8e1794881445caa853165bb84af5e0ec40a12e8413cd0f">
-                    <img
-                        src="https://img.freepik.com/premium-photo/brick-wall-texture-with-ivy-left-place-text_547542-178.jpg?w=740">
-                    <img
-                        src="https://img.freepik.com/free-photo/contrasting-outdoor-textures_23-2149702193.jpg?w=1380&t=st=1679555860~exp=1679556460~hmac=87076781d977e1f4b11836c726ae84735a8aaad4247546b40045b0d7de53c555">
-                    <img
-                        src="https://img.freepik.com/free-photo/3d-rendering-modern-black-bathroom-with-luxury-tile-decor_105762-2138.jpg?w=996&t=st=1679556236~exp=1679556836~hmac=2bed6385a847bcdf7d93637eda2caa855bf2d71f362b136813d6ec3e11b28f9d">
+                    {% for section in section2 %}
+                        <img src="{{ section.image.url }}">
+                    {% endfor %}
                 </div>
+
                 <div class="col">
-                    <img
-                        src="https://img.freepik.com/free-photo/blue-brick-wall-with-grey-window-blinders_181624-6472.jpg?w=1380&t=st=1679555914~exp=1679556514~hmac=b7cdebc55763a27c72ddd398357727a54dbf72f20f8a8de8c63a9c1c729f9eac">
-                    <img
-                        src="https://img.freepik.com/premium-photo/close-up-modern-minimalist-hall_295714-550.jpg?w=740">
-                    <img
-                        src="https://img.freepik.com/free-photo/3d-rendering-dining-room-kitchen-with-luxury-decor_105762-2056.jpg?w=1480&t=st=1679556003~exp=1679556603~hmac=d21da7dd2c0a32f3ee554019edad3850778599e0dd0d741a2b6df06866cf05ca">
-                    <img
-                        src="https://img.freepik.com/free-photo/modern-bathroom-authentic-interior-design_53876-129851.jpg?w=740&t=st=1679556086~exp=1679556686~hmac=6d9712649fa357450e020678ec7bff07721d9cd86b2e799594b234027cca041b">
-                    <img
-                        src="https://img.freepik.com/premium-photo/modern-public-toilet-contemporary-style-with-wooden-niche-black-marble-walls-3d-rendering_295714-3123.jpg?w=740">
+                    {% for section in section3 %}
+                        <img src="{{ section.image.url }}">
+                    {% endfor %}
                 </div>
             </div>
         </div>

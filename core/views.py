@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import Carousal,Category,Product,Abouthome,Logo_slider
+from core.models import Carousal,Category,Product,Abouthome,Logo_slider,Project
 
 # Create your views here.
 def index(request):
@@ -30,7 +30,28 @@ def category(request,category_id):
     return render(request,'marble.html',context)
 
 def project(request):
-    return render(request,'project.html')
+    projects = Project.objects.all()
+
+    # total_sections = projects.count() / 5
+
+    # sections = []
+
+    # for project in projects:
+    #     i = 1
+    #     project = {'project':project,'section':i}
+    #     sections.append(project)
+
+    section1 = Project.objects.all()[:5]
+    section2 = Project.objects.all()[6:10]
+    section3 = Project.objects.all()[11:15]
+
+    context = {
+        'projects' : projects,
+        'section1' : section1,
+        'section2' : section2,
+        'section3' : section3,
+    }
+    return render(request,'projects.html',context)
 
 def contact(request):
     return render(request,'contact.html')

@@ -45,7 +45,6 @@ class Abouthome(models.Model):
 class Logo_slider(models.Model):
     image = models.ImageField(upload_to='logo_slider')
 
-    # def __str__(self):
-    #     return self.image
-
-   
+class Project(models.Model):
+    image = models.ImageField(upload_to='project')
+ 
