@@ -5,7 +5,7 @@ from core import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
-    path('marble/', views.marble, name='marble'),
-    path('project/', views.marble, name='project'),
-    path('contact/', views.marble, name='contact')
+    path('category/<int:category_id>/', views.category, name='category'),
+    path('project/', views.project, name='project'),
+    path('contact/', views.contact, name='contact'),
 ]

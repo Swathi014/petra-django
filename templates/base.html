@@ -59,11 +59,9 @@
                                 href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">Products</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'marble' %}">MARBLES</a></li>
-                                <li><a class="dropdown-item" href="granite.html">GRANITE</a></li>
-                                <li><a class="dropdown-item" href="tiles.html">TILES</a></li>
-                                <li><a class="dropdown-item" href="claddings.html">CLADDINGS</a></li>
-                                <li><a class="dropdown-item" href="accessories.html">ACCESSORIES</a></li>
+                                {% for category in categories %}
+                                    <li><a class="dropdown-item" href="{% url 'category' category.id %}">{{category.title}}</a></li>
+                                {% endfor %}
                             </ul>
                         </li>
                         <li class="nav-item "><a class="nav-link" href="{% url 'project' %}" role="button"

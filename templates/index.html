@@ -7,14 +7,25 @@
                 <div class="loader"></div>
             </div>
         </div>
+
         <section class="py-0">
+           
             <div class="swiper theme-slider min-vh-100"
                 data-swiper='{"loop":true,"allowTouchMove":false,"autoplay":{"delay":5000},"effect":"fade","speed":800}'>
                 <div class="swiper-wrapper">
+                    {% for carousal in carousals %}
                     <div class="swiper-slide" data-zanim-timeline="{}">
+                        {% if carousal.image.url %}
                         <div class="bg-holder overlay overlay-freya"
-                            style="background-image:url({{ carousals.image.url }});"
-                            data-parallax="data-parallax" data-rellax-speed="-3"></div>
+                            style="background-image:url('{{ carousal.image.url }}');"
+                            data-parallax="data-parallax" data-rellax-speed="-3">
+                        </div>
+                        {% else %}
+                        <div class="bg-holder overlay overlay-freya"
+                            style="background-image:url('https://img.freepik.com/free-photo/top-view-boards…03c04c61917d86edbf8f1c7c3adb97e4ac7430ae5b174fa13');"
+                            data-parallax="data-parallax" data-rellax-speed="-3">
+                        </div>
+                        {% endif %}
                         <!--/.bg-holder-->
                         <div class="container-fluid">
                             <div class="row min-vh-100 justify-content-start align-items-end pt-11 pb-6 text-white"
@@ -25,19 +36,19 @@
                                             <div class="overflow-hidden">
                                                 <p class="mb-1 text-uppercase ls"
                                                     data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.1}'>
-                                                    {{ carousals.sub_title }}</p>
+                                                    {{ carousal.sub_title }}</p>
                                             </div>
                                             <div class="overflow-hidden">
                                                 <h2 class="text-white fw-medium mb-4 mb-lg-0"
                                                     data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0}'>
-                                                    {{ carousals.title }} </h2>
+                                                    {{ carousal.title }} </h2>
                                             </div>
                                         </div>
                                         <div class="col text-lg-end">
                                             <div class="overflow-hidden">
                                                 <div
                                                     data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.2}'>
-                                                    <a class="btn btn-sm btn-outline-white" href="projects.html">{{ carousals.button_label }}</a>
+                                                    <a class="btn btn-sm btn-outline-white" href="projects.html">{{ carousal.button_label }}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -46,78 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide" data-zanim-timeline="{}">
-                        <div class="bg-holder overlay overlay-freya"
-                            style="background-image:url(https://img.freepik.com/free-photo/still-life-putting-up-decorative-vinyls_23-2149683458.jpg?w=1380&t=st=1679048634~exp=1679049234~hmac=4acad9e70aee971c0126adb8b036fce61cce099029d16958a7ccad49003622b3);"
-                            data-parallax="data-parallax" data-rellax-speed="-3"></div>
-                        <!--/.bg-holder-->
-                        <div class="container-fluid">
-                            <div class="row min-vh-100 justify-content-start align-items-end pt-11 pb-6 text-white"
-                                data-zanim-timeline="{}">
-                                <div class="col">
-                                    <div class="row align-items-end">
-                                        <div class="col-lg">
-                                            <div class="overflow-hidden">
-                                                <p class="mb-1 text-uppercase ls"
-                                                    data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.1}'>
-                                                    French Valley</p>
-                                            </div>
-                                            <div class="overflow-hidden">
-                                                <h2 class="text-white fw-medium mb-4 mb-lg-0"
-                                                    data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0}'>
-                                                    Get the best quality branded tiles and accessories</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col text-lg-end">
-                                            <div class="overflow-hidden">
-                                                <div
-                                                    data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.2}'>
-                                                    <a class="btn btn-sm btn-outline-white" href="about.html">More about
-                                                        Petra</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-zanim-timeline="{}">
-                        <div class="bg-holder overlay overlay-freya"
-                            style="background-image:url(https://img.freepik.com/free-photo/top-view-boards-mdf-material_23-2149418574.jpg?w=1380&t=st=1679049147~exp=1679049747~hmac=8b3c2aec7172e6ef952e5d13a6d491e0770c81a1b64c090f852b9bd65861baae);"
-                            data-parallax="data-parallax" data-rellax-speed="-3"></div>
-                        <!--/.bg-holder-->
-                        <div class="container-fluid">
-                            <div class="row min-vh-100 justify-content-start align-items-end pt-11 pb-6 text-white"
-                                data-zanim-timeline="{}">
-                                <div class="col">
-                                    <div class="row align-items-end">
-                                        <div class="col-lg">
-                                            <div class="overflow-hidden">
-                                                <p class="mb-1 text-uppercase ls"
-                                                    data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.1}'>
-                                                    Upper Chesterfield</p>
-                                            </div>
-                                            <div class="overflow-hidden">
-                                                <h2 class="text-white fw-medium mb-4 mb-lg-0"
-                                                    data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0}'>
-                                                    Make your places eternal with beautiful and unique floorings.</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col text-lg-end">
-                                            <div class="overflow-hidden">
-                                                <div
-                                                    data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.2}'>
-                                                    <a class="btn btn-sm btn-outline-white" href="tiles.html">More about
-                                                        Tiles</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="swiper-nav">
                     <div class="swiper-button-prev"><span class="fas fa-chevron-left"></span></div>
@@ -136,107 +76,27 @@
                 </div>
                 <div class="row">
                     <!--Start Single Features One-->
+                    {% for category in categories %}
                     <div class="col-xl-4 col-lg-4 wow fadeInUp animated animated">
                         <div class="features-one__single">
                             <div class="features-one__single-img">
                                 <img class="img-fluid"
-                                    src="https://img.freepik.com/free-photo/pink-gray-marble-textured_53876-94544.jpg?w=740&t=st=1679042834~exp=1679043434~hmac=a3b4480494bb08edb4342bc7a7201b7f0e299800828faa2069b6cf6a84b523e1"
+                                    src="{{ category.image.url }}"
                                     alt="Residential" />
                                 <div class="features-one__single-title text-center">
-                                    <h3><a href="marble.html">MARBLES</a></h3>
+                                    <h3><a href="{% url 'category' category.id %}">{{ category.title }}</a></h3>
                                 </div>
                             </div>
 
                             </a><!-- /.feature-one__single__more -->
                         </div>
                     </div>
-                    <!--End Single Features One-->
-                    <!--Start Single Features One-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp animated animated">
-                        <div class="features-one__single">
-                            <div class="features-one__single-img">
-                                <img class="img-fluid"
-                                    src="https://img.freepik.com/free-photo/abstract-background-rock-surface_23-2148978404.jpg?w=740&t=st=1679042971~exp=1679043571~hmac=4b39a1d6b4fada48b90a0cd623bafc3fb8c3f4655b4592cd504f683d4603c242"
-                                    alt="Commercial" />
-                                <div class="features-one__single-title text-center">
-                                    <h3><a href="granite.html">GRANITES</a></h3>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--End Single Features One-->
-                    <!--Start Single Features One-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp animated animated">
-                        <div class="features-one__single">
-                            <div class="features-one__single-img">
-                                <img class="img-fluid"
-                                    src="https://img.freepik.com/premium-photo/old-vintage-square-facing-tiles_445280-1299.jpg?w=740"
-                                    alt="Hospitality" />
-                                <div class="features-one__single-title text-center">
-                                    <h3><a href="claddings.html">CLADDINGS</a></h3>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--End Single Features One-->
-
-
-
+                   
+                    {% endfor %}
+                    
 
                 </div>
-                <div class="row">
-                    <!--Start Single Features One-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp animated animated">
-                        <div class="features-one__single">
-                            <div class="features-one__single-img">
-                                <img class="img-fluid"
-                                    src="https://img.freepik.com/free-photo/beautiful-modern-style-faucet-with-steel-sink-kitchen_181624-40744.jpg?w=740&t=st=1679043280~exp=1679043880~hmac=f21cdfb928c70ae857766622a8a7a4b845e35d83f36c5986937f1097a547618f"
-                                    alt="Residential" />
-                                <div class="features-one__single-title text-center">
-                                    <h3><a href="accessories.html">ACCESSORIES</a></h3>
-                                </div>
-                            </div>
-
-                            </a><!-- /.feature-one__single__more -->
-                        </div>
-                    </div>
-                    <!--End Single Features One-->
-                    <!--Start Single Features One-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp animated animated">
-                        <div class="features-one__single">
-                            <div class="features-one__single-img">
-                                <img class="img-fluid"
-                                    src="https://img.freepik.com/free-photo/3d-rendering-modern-steel-elevator-lift-lobby-business-hotel-with-luxury-design_105762-2042.jpg?w=740&t=st=1679043070~exp=1679043670~hmac=ee5d72c7034134ce0a26ec020979876bbf96f01a6a20eb7f8f276a42c80b15dc"
-                                    alt="Commercial" />
-                                <div class="features-one__single-title text-center">
-                                    <h3><a href="tiles.html">TILES</a></h3>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--End Single Features One-->
-                    <!--Start Single Features One-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp animated animated">
-                        <div class="features-one__single">
-                            <div class="features-one__single-img">
-                                <img class="img-fluid" src="{% static 'assets/img/gallery/hp-1-categories-3.jpg' %}"
-                                    alt="Hospitality" />
-                                <div class="features-one__single-title text-center">
-                                    <h3><a href="marble.html">DECORATIONS</a></h3>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--End Single Features One-->
-
-
-
-
-                </div>
+                
             </div>
 
             <!-- About New section -->
