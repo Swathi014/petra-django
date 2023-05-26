@@ -42,8 +42,8 @@
                     <div class="col-lg-4 pe-lg-6">
                         <div class="row">
                             <div class="col-md-4 col-lg-12 mb-4">
-                                <h5 class="mb-2">Flooring store in Kakkur</h5>Kakkur<br />Kerala, 673613<br />Cell: <a
-                                    href="tel:097450 95972">097450 95972</a>
+                                <h5 class="mb-2">{{ contact.location }}</h5>{{ contact.city }}<br />{{ contact.state }}, {{ contact.pin }}<br />Cell: <a
+                                    href="tel:097450 95972">{{ contact.phone }}</a>
                             </div>
                             <div class="col-md-4 col-lg-12 mb-4">
                                 <h5 class="mb-2">Open Hours</h5>8.30am to 8.30pm<br />
@@ -62,17 +62,21 @@
                         </div>
                     </div>
                     <div class="col-lg mt-4 mt-lg-0">
-                        <form>
+                        <form method="post">
+                            {% csrf_token %}
                             <div class="row">
-                                <div class="col-12"><input class="form-control" type="text" placeholder="Your Name"
-                                        required="required" /></div>
-                                <div class="col-12 mt-4"><input class="form-control" type="email" placeholder="Email"
-                                        required="required" /></div>
-                                <div class="col-12 mt-4"><textarea class="form-control" rows="6"
-                                        placeholder="Enter your descriptions here..." required="required"></textarea>
+                                <div class="col-12">
+                                    <input class="form-control" name="name" type="text" placeholder="Your Name"required="required"/>
                                 </div>
-                                <div class="col-12 mt-4"><button class="btn btn-primary" type="Submit"> <span
-                                            class="text-white fw-semi-bold">Send Now</span></button></div>
+                                <div class="col-12 mt-4">
+                                    <input class="form-control" name="email" type="email" placeholder="Email"required="required"/>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <textarea name="description" class="form-control" rows="6" placeholder="Enter your descriptions here..." required="required"></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button class="btn btn-primary" type="submit"><span class="text-white fw-semi-bold">Send Now</span></button>
+                                </div>
                             </div>
                         </form>
                     </div>

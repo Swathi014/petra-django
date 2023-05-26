@@ -47,4 +47,22 @@ class Logo_slider(models.Model):
 
 class Project(models.Model):
     image = models.ImageField(upload_to='project')
+
+class enquiry(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
  
+
+class contact(models.Model):
+    location = models.CharField(max_length=100)
+    state = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    pin = models.IntegerField()
+    phone = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{self.location}/{self.city}'

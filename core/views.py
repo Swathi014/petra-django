@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from core.models import Carousal,Category,Product,Abouthome,Logo_slider,Project
+from django.shortcuts import render,redirect
+from core.models import Carousal,Category,Product,Abouthome,Logo_slider,Project,enquiry,contact
 
 # Create your views here.
 def index(request):
@@ -23,9 +23,11 @@ def about(request):
 def category(request,category_id):
     category = Category.objects.get(id=category_id)
     products = Product.objects.filter(category=category)
+    categories = Category.objects.all()
     context = {
         'category' : category,
-        'products' : products
+        'products' : products,
+        'categories' : categories
     }
     return render(request,'marble.html',context)
 
@@ -53,8 +55,20 @@ def project(request):
     }
     return render(request,'projects.html',context)
 
-def contact(request):
-    return render(request,'contact.html')
+def contactview(request):
+    cont = contact.objects.last()
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        description = request.POST.get('description')
+        print('name : ',name,' email : ',email,' description : ', description)
+        enquiry.objects.create(name=name,email=email,description=description)
+        return redirect('.')
+    
+    context = {
+        'contact': cont
+    }
+    return render(request,'contact.html',context)
 
 
     
