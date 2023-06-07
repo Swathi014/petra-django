@@ -3,5 +3,6 @@ from administrator import views
 
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
-    path('blank/',views.blank, name='blank'),
+    path('about_admin/',views.about_admin, name='about_admin'),
+    path('products/',views.products, name='products')
 ]
