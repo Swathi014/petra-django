@@ -1,0 +1,47 @@
+{% extends 'admin/base.html' %} {% load static %} {% block content %}
+<div class="container-fluid py-4">
+  <div class="row mt-2">
+    <div class="col-lg-12 mb-lg-0 mb-4">
+      <div class="card z-index-2 h-100">
+        <div class="card-header pb-0 pt-5 bg-transparent">
+          <h2 class="text-capitalize text-center">Categories</h2>
+        </div>
+        <form class="m-3 justify-content-end" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row m-5">
+                <div class="col-6">
+                    <label for="fname" class="form-label">Category Name:</label>
+                    <input value="{{category.title}}" class="form-control" type="text" id="fname" name="category_name" placeholder="Category Name" /><br />
+                </div>
+                <div class="col-6">
+                    <label for="fname" class="form-label">Category image:</label>
+                    <input value="{{category.image}}" class="form-control" type="file" id="fimage" name="category_image" /><br />
+                </div>
+                <div class="col-4">
+                    <label for="fname" class="form-label">Inner Title:</label>
+                    <input value="{{category.inner_title}}" class="form-control" type="text" id="ftitle" name="category_innertitle" placeholder=" Inner Title"/><br />
+                </div>
+                <div class="col-4">
+                    <label for="fname" class="form-label">Inner SubTitle:</label>
+                    <input value="{{category.inner_subtitle}}" class="form-control" type="text" id="finnersubtitle" name="category_innersubtitle" placeholder=" Inner SubTitle"/><br />
+                </div>
+                <div class="col-4">
+                    <label for="fname" class="form-label">Sub Title:</label>
+                    <input value="{{category.sub_title}}" class="form-control" type="text" id="fsubtitle" name="category_subtitle" placeholder=" subtitle"/><br />
+                </div>
+                <div class="col-12">
+                    <label for="fname" class="form-label">Description:</label>
+                    <textarea name="category_description" id="" cols="30" rows="5" class="form-control" placeholder=" description">{{category.description}}</textarea>
+                </div>
+                
+            </div>
+            <div class="col-12 d-flex justify-content-end"><a href="">
+                <button type="submit" class="button btn btn-primary text-white me-5 btn-lg">Add</button>
+              </a>
+              </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
+</div>

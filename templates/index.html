@@ -16,7 +16,7 @@
                 <div class="swiper-wrapper">
                     {% for carousal in carousals %}
                     <div class="swiper-slide" data-zanim-timeline="{}">
-                        {% if carousal.image.url %}
+                        {% if carousal.image %}
                         <div class="bg-holder overlay overlay-freya"
                             style="background-image:url('{{ carousal.image.url }}');"
                             data-parallax="data-parallax" data-rellax-speed="-3">
@@ -84,9 +84,11 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp animated animated">
                         <div class="features-one__single">
                             <div class="features-one__single-img">
+                                {% if category.image %}
                                 <img class="img-fluid"
                                     src="{{ category.image.url }}"
                                     alt="Residential" />
+                                {% endif %}
                                 <div class="features-one__single-title text-center">
                                     <h3><a href="{% url 'category' category.id %}">{{ category.title }}</a></h3>
                                 </div>
