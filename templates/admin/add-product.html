@@ -1,0 +1,47 @@
+{% extends 'admin/base.html' %} {% load static %} {% block content %}
+<div class="container-fluid py-4">
+  <div class="row mt-2">
+    <div class="col-lg-12 mb-lg-0 mb-4">
+      <div class="card z-index-2 h-100">
+        <div class="card-header pb-0 pt-5 bg-transparent">
+          <h2 class="text-capitalize text-center">Products</h2>
+        </div>
+        <form class="m-3 justify-content-end ">
+            <div class="row m-5">
+                <div class="col-6">
+                    <label for="fname" class="form-label">product Name:</label>
+                    <input class="form-control" type="text" id="fname" name="fname" placeholder=" product title" /><br />
+                </div>
+                <div class="col-6">
+                    <label for="fname" class="form-label">Product image:</label>
+                    <input class="form-control" type="file" id="fimage" name="fimage" /><br />
+                </div>
+                <div class="col-6">
+                    <label for="fname" class="form-label">Category:</label>
+                    <select name="" id="" class="form-control">
+                        <option value="">select category</option>
+                        {% for Category in categories %}
+                        <option value="">{{Category.title}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="fname" class="form-label">Price:</label>
+                    <input class="form-control" type="text" id="fprice" name="fprice" placeholder=" price"/><br />
+                </div>
+                <div class="col-12">
+                    <label for="fname" class="form-label">Description:</label>
+                    <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder=" description"></textarea>
+                </div>
+                
+            </div>
+            <div class="col-12 d-flex justify-content-end"><a href="">
+                <button class="button btn btn-primary text-white me-5 btn-lg">Add</button>
+              </a>
+              </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
+</div>

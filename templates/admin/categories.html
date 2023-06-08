@@ -7,13 +7,13 @@
       <div class="col-lg-12 mb-lg-0 mb-4">
         <div class="card z-index-2 h-100">
           <div class="card-header pb-0 pt-5 bg-transparent">
-            <h2 class="text-capitalize text-center">Products</h2>
+            <h2 class="text-capitalize text-center">categories</h2>
             
           </div>
 
           <div class="row mt-4">
-            <div class="col-12 d-flex justify-content-end"><a href="{% url 'add_products' %}">
-              <button class="button btn btn-primary text-white me-5 btn-lg">Add products</button>
+            <div class="col-12 d-flex justify-content-end"><a href="{% url 'add_categories' %}">
+              <button class="button btn btn-primary text-white me-5 btn-lg">Add categories</button>
             </a>
             </div>
             <div class="col-12">
@@ -25,59 +25,65 @@
                         <tr>
                           <th class=" text-uppercase text-center">image</th>
                           <th class="text-center text-uppercase">title</th>
-                          <th class="text-center text-uppercase">description</th>
-                          <th class="text-center text-uppercase">price</th>
-                          <th class="text-center text-uppercase">category</th>
-                          <!-- <th class="text-center text-uppercase">Status</th> -->
-                          <th class=" text-uppercase">edit</th>
-                          <th class=" text-uppercase">delete</th>
+                          <th class="text-center text-uppercase">inner title</th>
+                          <!-- <th class="text-center text-uppercase">inner subtitle</th>
+                          <th class="text-center text-uppercase">sub title</th>
+                          <th class="text-center text-uppercase">description</th> -->
+                          <th class="text-center text-uppercase">edit</th>
+                         
                           
                         </tr>
                       </thead>
                       <tbody>
-                        {% for product in products %}
+                        {% for category in categories %}
                         <tr>
                           <td>
                             <div class="d-flex justify-content-center">
                               <div>
-                                <img src="{{ product.image.url }}" class="avatar avatar-s me-3" alt="user1">
+                                <img src="{{ category.image.url }}" class="avatar avatar-s me-3" alt="user1">
                               </div>
                               
                             </div>
                           </td>
                           <td>
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-sm text-center">{{ product.title }}</h6>
+                              <h6 class="mb-0 text-sm text-center">{{ category.title }}</h6>
                              
                             </div>
                           
                           </td>
                           <td>
-                            <p class="text-center text-xs font-weight-bold mb-0">{{ product.description }}</p>
+                            <p class="text-center text-xs font-weight-bold mb-0">{{ category.inner_title }}</p>
+                          
+                          </td>
+                          <!-- <td>
+                            <p class="text-center text-xs font-weight-bold mb-0">${{category.inner_subtitle}}</p>
                           
                           </td>
                           <td>
-                            <p class="text-center text-xs font-weight-bold mb-0">${{product.price}}</p>
+                            <p class="text-center text-xs font-weight-bold mb-0 text-center">{{category.sub_title}}</p>
                           
                           </td>
                           <td>
-                            <p class="text-center text-xs font-weight-bold mb-0 text-center">{{product.category}}</p>
+                            <p class="text-center text-xs font-weight-bold mb-0 text-center">{{category.description}}</p>
                           
-                          </td>
+                          </td> -->
                           <!-- <td class="align-middle text-center text-sm">
                             <span class="text-center badge badge-sm bg-gradient-success">{{product.status}}</span>
                           </td> -->
                           
-                          <td class="align-middle">
+                          <td class="align-middle text-center">
                             <a href="javascript:;" class="badge badge-sm bg-gradient-success text-center" data-toggle="tooltip" data-original-title="Edit user">
                               Edit
                             </a>
-                          </td>
-                          <td class="align-middle">
                             <a href="javascript:;" class="badge badge-sm bg-gradient-danger text-center" data-toggle="tooltip" data-original-title="Delete user">
-                              Delete
-                            </a>
+                                Delete
+                              </a>
+                              <a href="javascript:;" class="badge badge-sm bg-gradient-info text-center" data-toggle="tooltip" data-original-title="Delete user">
+                                View
+                              </a>
                           </td>
+                         
                         </tr>
                       
                         {% endfor %}
